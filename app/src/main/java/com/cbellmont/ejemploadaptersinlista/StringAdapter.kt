@@ -18,11 +18,23 @@ class StringAdapter() : RecyclerView.Adapter<StringAdapter.StringViewHolder>()  
     }
 
     override fun getItemCount(): Int {
-        return 7
+        //return 7
+        return 10
     }
 
     override fun onBindViewHolder(holder: StringViewHolder, position: Int) {
         holder.textView.text = "Position = $position"
+
+        if (position % 2 != 0) {
+            holder.textView.text = "Soy impar"
+        } else {
+            holder.textView.setBackgroundColor(22)
+        }
+
+        if (position  == 9) {
+            holder.textView.text = "Soy el último"
+        }
+
     }
 
 }
